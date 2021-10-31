@@ -39,7 +39,7 @@ all=["O'quv markazimizda quyidagi kurslar orqali sizda Java, Python, Javascript 
     "-Android advanced\n"
     ]
 
-frontend = ["""Frontendga kurs yoq dedim sizgaa"""
+frontend = [
 
 ]
 
@@ -247,7 +247,7 @@ async def unban_user(message: types.Message):
     await message.reply_to_message.delete()
 
 
-@dp.message_handler(IsGroup(), Command('type', prefixes="!#$/"), AdminFilter())
+@dp.message_handler(IsGroup(), Command('type', prefixes="!#$/"))
 async def type(message: types.Message):
     try:
         member = message.reply_to_message.from_user
