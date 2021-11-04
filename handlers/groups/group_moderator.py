@@ -236,7 +236,7 @@ async def unban_user(message: types.Message):
     await service_message.delete()
 
 
-@dp.message_handler(IsGroup(), Command("del", prefixes="!#$&/"), AdminFilter())
+@dp.message_handler(IsGroup(), Command("del", prefixes="!#$&/"))
 async def unban_user(message: types.Message):
     # member = message.reply_to_message.from_user
 
