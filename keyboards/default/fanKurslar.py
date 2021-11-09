@@ -31,7 +31,7 @@ fanKursKey = ReplyKeyboardMarkup(
         ],
         [
             KeyboardButton(text="Nemis tili"),
-            KeyboardButton(text="Prezident maktabiga tayyrlov")
+            KeyboardButton(text="Prezident maktabiga tayyorlov")
         ],
         [
             KeyboardButton(text='Orqaga 🔙')

@@ -9,7 +9,7 @@ from loader import dp
 
 @dp.message_handler(IsPrivate(), text='Fan kurslarimiz')
 async def show_fan_kurslar(message: Message):
-    await message.answer(text='Bizda quyidagi kurslar mavjud :',reply_markup=fanKursKey)
+    await message.answer(text='Bizda quyidagi kurslar mavjud :', reply_markup=fanKursKey)
 
 
 @dp.message_handler(IsPrivate(), text='IT kurslar')
@@ -24,4 +24,4 @@ async def show_we(message: Message):
 
 @dp.message_handler(IsPrivate(), text='Orqaga 🔙')
 async def asadjas(message: Message):
-    await message.answer(text='Orqaga qaytildi',reply_markup=Bookshelf)
+    await message.answer(text='Orqaga qaytildi', reply_markup=Bookshelf)
