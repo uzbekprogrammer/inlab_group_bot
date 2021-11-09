@@ -18,10 +18,10 @@ async def show_it_kurs(message: Message):
 
 
 @dp.message_handler(IsPrivate(), text='Biz bilan bog\'lanish')
-async def show_we(message:Message):
-    await message.answer(text="<a href='@AbduqodirIELTS_9'>Abduqodir Toshpo'latov</a>ga bog'laning")
+async def show_we(message: Message):
+    await message.answer(text="<a href='https://t.me/AbduqodirIELTS_9'>Abduqodir Toshpo'latov</a>ga bog'laning")
 
 
 @dp.message_handler(IsPrivate(), text='Orqaga 🔙')
-async def asadjas(message:Message):
+async def asadjas(message: Message):
     await message.answer(text='Orqaga qaytildi',reply_markup=Bookshelf)
