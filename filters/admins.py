@@ -1,8 +1,14 @@
 from aiogram import types
 from aiogram.dispatcher.filters import BoundFilter
 
+from data.config import ADMINS
+
 
 class AdminFilter(BoundFilter):
     async def check(self, message: types.Message) -> bool:
         member = await message.chat.get_member(message.from_user.id)
+        if member["user"]['id'] == int(ADMINS[0]):
+            return True
+        print(member["user"]['id'])
+        print(ADMINS)
         return member.is_chat_admin()

@@ -87,6 +87,7 @@ Davomiyligi: 8 oy
 Ilk o'quvchilar uchun har bir kurslarga 3 oy muddatda 50 ming so'mdan chegirma mavjud!"""
 ]
 
+
 @dp.message_handler(IsGroup(), Command('address', prefixes='!#$&/'))
 async def mess_addres(message: types.Message):
     await message.answer('Assalomu alaykum!\n'
@@ -178,6 +179,7 @@ async def read_only_mode(message: types.Message):
     await message.delete()
     await service_message.delete()
 
+
 # read-only holatdan qayta tiklaymiz
 @dp.message_handler(IsGroup(), Command("unro", prefixes="!#$&/"), AdminFilter())
 async def undo_read_only_mode(message: types.Message):
@@ -206,6 +208,8 @@ async def undo_read_only_mode(message: types.Message):
     await service_message.delete()
 
 # Foydalanuvchini banga yuborish (guruhdan haydash)
+
+
 @dp.message_handler(IsGroup(), Command("ban", prefixes="!#$&/"), AdminFilter())
 async def ban_user(message: types.Message):
     member = message.reply_to_message.from_user
@@ -219,6 +223,7 @@ async def ban_user(message: types.Message):
     await asyncio.sleep(1)
     await message.delete()
     await service_message.delete()
+
 
 # Foydalanuvchini bandan chiqarish, foydalanuvchini guruhga qo'sha olmaymiz (o'zi qo'shilishi mumkin)
 @dp.message_handler(IsGroup(), Command("unban", prefixes="!#$&/"), AdminFilter())
@@ -236,18 +241,18 @@ async def unban_user(message: types.Message):
     await service_message.delete()
 
 
-@dp.message_handler(IsGroup(), Command("del", prefixes="!#$&/"))
+@dp.message_handler(IsGroup(), Command("del", prefixes="!#$&/"), AdminFilter())
 async def unban_user(message: types.Message):
     # member = message.reply_to_message.from_user
 
-    await asyncio.sleep(1)
+    # await asyncio.sleep(1)
 
-    await message.delete()
     # await service_message.delete()
     await message.reply_to_message.delete()
+    await message.delete()
 
 
-@dp.message_handler(IsGroup(), Command('type', prefixes="!#$/"))
+@dp.message_handler(IsGroup(), Command('type', prefixes="!#$/"), AdminFilter())
 async def type(message: types.Message):
     try:
         member = message.reply_to_message.from_user
