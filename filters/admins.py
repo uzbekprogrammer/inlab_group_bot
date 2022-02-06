@@ -9,6 +9,4 @@ class AdminFilter(BoundFilter):
         member = await message.chat.get_member(message.from_user.id)
         if member["user"]['id'] == int(ADMINS[0]):
             return True
-        print(member["user"]['id'])
-        print(ADMINS)
         return member.is_chat_admin()
