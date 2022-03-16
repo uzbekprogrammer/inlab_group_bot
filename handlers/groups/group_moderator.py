@@ -4,6 +4,9 @@ import re
 import aiogram
 from aiogram import types
 from aiogram.dispatcher.filters import Command
+from aiogram.types import chat
+
+from data.config import BOT_TOKEN
 from filters import IsGroup, AdminFilter
 from loader import dp, bot
 backend = ["Assalomu alaykum! \n\n"
@@ -268,3 +271,4 @@ async def type(message: types.Message):
         await message.reply_to_message.reply(comment)
     except:
         await message.answer(comment)
+
